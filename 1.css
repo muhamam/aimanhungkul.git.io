@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    
+}
+
+
+nav{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    height: 50px;
+    align-items: center;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+
+}
+
+nav .logo{
+    font-size: x-large;
+}
+nav ul li a {
+    color: burlywood;
+    text-decoration: none   ;
+    font-family: 'Indie Flower', cursive;
+    font-size: 0.8em;
+}
+
+nav li a :hover{
+    color: crimson;
+}
+
+
+.saklar input{
+    position: absolute;
+    width: 40px;
+    height: 58px;
+    opacity: 0;
+    left: -5px;
+    top: -3px;
+    cursor: pointer;    
+}
+
+
+.saklar{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+
+.saklar span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(206, 84, 236);
+    border-radius: 10px;
+
+}
+
+/* humberger menu animation */
+
+
+.saklar span:nth-child(2){
+    transform-origin: 50% 50%;
+    
+}
+.saklar span:nth-child(4){
+    transform-origin: 50%  50%;
+    
+}
+
+
+.saklar input:checked ~ span:nth-child(2){
+    transform: rotate(180deg);
+    transition: 1s;
+}
+.saklar input:checked ~ span:nth-child(3){
+    transform: rotate(180deg);
+    transition: 1s;
+}
+
+.saklar input:checked ~ span:nth-child(4){
+    transform: rotate(180deg);
+    transition: 1s;
+}
+
+
+/* responsive */
+/* tablet */
+
+@media screen and (max-width:765px){
+    nav ul {
+        width: 50%;
+    }
+
+    
+}
+
+/* mobile */
+
+@media screen and (max-width:500px) {
+
+    .saklar{
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top:0;
+        justify-content: space-evenly;
+        height: 100vh;
+        text-align: center;
+        flex-direction: column;
+        background-color: aqua;
+        z-index: -1;
+        transform: translatex(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    
+
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
